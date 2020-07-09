@@ -1,0 +1,22 @@
+{
+  "$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
+  "contentVersion": "1.0.0.0",
+  "parameters": {
+    "ApimServiceName": {
+      "type": "string"
+    }
+  },
+  "resources": [
+    {
+      "properties": {
+        "description": "IPIMSWeatherService",
+        "resourceId": "https://management.azure.com/subscriptions/2b38b214-5340-4b22-b30f-4e798fd66123/resourceGroups/APIM-ResGroup/providers/Microsoft.Web/sites/IPIMSWeatherService",
+        "url": "https://ipimsweatherservice.azurewebsites.net",
+        "protocol": "http"
+      },
+      "name": "[concat(parameters('ApimServiceName'), '/WebApp_ipimsweatherservice')]",
+      "type": "Microsoft.ApiManagement/service/backends",
+      "apiVersion": "2019-01-01"
+    }
+  ]
+}
